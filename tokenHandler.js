@@ -19,7 +19,7 @@ module.exports = (token, resolve, reject, role,
           return reject();
         }
         const customRole = payload.params[roleAttName];
-        if (customRole == role) {
+        if (customRole == role || role === "$everyone") {
           resolve(null, true);
         } else {
           // not authorized
